@@ -33,3 +33,33 @@ body {
     border-radius    : 1vmin;
 }
 
+.tile {
+    /*--x                    : 0;*/
+    /*--y                    : 0;*/
+    /*--background-lightness : 80%;*/
+    /*--text-lightness       : 20%;*/
+
+    position         : absolute;
+    display          : flex;
+    font-weight      : bold;
+    border-radius    : 1vmin;
+    justify-content  : center;
+    align-items      : center;
+    margin           : var(--cell-gap);
+    height           : var(--cell-size);
+    width            : var(--cell-size);
+    transition       : 100ms ease-in-out;
+    animation        : show 200ms ease-in-out;
+    color            : hsl(200, 25%, var(--text-lightness));
+    background-color : hsl(200, 50%, var(--background-lightness));
+    top              : calc(var(--y) * (var(--cell-size) + var(--cell-gap)));
+    left             : calc(var(--x) * (var(--cell-size) + var(--cell-gap)));
+}
+
+@keyframes show {
+    0% {
+        opacity   : .5;
+        transform : scale(0);
+    }
+}
+
