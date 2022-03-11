@@ -1,0 +1,35 @@
+*, *::before *::after {
+    box-sizing  : border-box;
+    font-family : Arial, serif;
+}
+
+body {
+    background-color : #333;
+    display          : flex;
+    justify-content  : center;
+    align-content    : center;
+    height           : 100vh;
+    margin           : 0;
+    font-size        : 7.5vmin;
+}
+
+#game-board {
+    --grid-size           : 4;
+    --cell-gap            : 2vmin;
+    --cell-size           : 20vmin;
+
+    background-color      : #CCC;
+    display               : grid;
+    border-radius         : 1vmin;
+    position              : relative;
+    gap                   : var(--cell-gap);
+    padding               : var(--cell-gap);
+    grid-template-columns : repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows    : repeat(var(--grid-size), var(--cell-size));
+}
+
+.cell {
+    background-color : #AAA;
+    border-radius    : 1vmin;
+}
+
